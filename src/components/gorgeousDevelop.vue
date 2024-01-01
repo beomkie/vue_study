@@ -1,8 +1,10 @@
 <template>
     <div>
-        <h1>{{ title }}</h1>
-        <p>{{ name }}</p><br>
-        <button @click="updateName">Change name</button>
+        <p>header</p>
+        <slot name="header" :gorgeous="gorgeous"></slot>
+        <p>body</p>
+        <slot></slot>
+        <p>footer</p>
     </div>
 </template>
 
@@ -11,12 +13,12 @@ export default {
     props: {
         title: {
             type: String,
-            required: true
+            required: false
         }
     },
     data() {
         return {
-            name: 'Gorgeous Develop',
+            gorgeous: 'develope',
         }
     },
 

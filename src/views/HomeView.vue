@@ -1,10 +1,10 @@
 <template>
   <div>
     <h1>This is Home page</h1>
-    <form>
+    <!-- <form> -->
       <InputField v-model="name"/>
-      <br><button>Submit</button>
-    </form>
+      <br><button @click="updateName">Submit</button>
+    <!-- </form> -->
     {{ name }}
   </div>
 </template>
@@ -18,12 +18,47 @@ export default {
   },
   data() {
     return {
-      name: ''
+      name: 'beomkie dev'
     }
   },
+  beforeCreate() {
+    console.log('beforeCreate', this.name);
+  },
+
+  created() {
+    console.log('create', this.name);
+
+  },
+  beforeMount() {
+    alert('beforeMount')
+
+  },
+  mounted() {
+    alert('mounted')
+
+
+  },
+  beforeUpdate() {
+    alert('beforeUpdate')
+
+
+  },
+  updated() {
+    alert('updated')
+
+
+  },
+  beforeDestroy() {
+    alert('beforeDestroy')
+
+  },
+  destroyed() {
+    alert('destroyed')
+  },
+
   methods: {
-    updateName(name) {
-      this.name = name;
+    updateName() {
+      this.name = 'hello';
     }
   }
   
