@@ -10,7 +10,7 @@
 
 <script>
 export default {
-    props: {
+    props: { 
         title: {
             type: String,
             required: false
